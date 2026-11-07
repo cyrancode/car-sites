@@ -1,0 +1,124 @@
+@import "tailwindcss";
+
+/* Colours and fonts come from the client's theme (set on <body>, see RootLayout). */
+@theme inline {
+  --color-ink: var(--ink);
+  --color-bg: var(--bg);
+  --color-surface: var(--surface);
+  --color-line: var(--line);
+  --color-line-strong: var(--line-strong);
+  --color-muted: var(--muted);
+  --color-accent: var(--accent);
+  --color-accent-hover: var(--accent-hover);
+  --color-on-dark: var(--on-dark);
+  --color-dark: var(--dark);
+  --color-dark-muted: var(--dark-muted);
+  --color-dark-line: var(--dark-line);
+  --color-wa: var(--wa);
+  --color-wa-hover: var(--wa-hover);
+  --font-sans: var(--font-body), ui-sans-serif, system-ui, sans-serif;
+  --font-display: var(--font-title), Impact, sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 4rem;
+}
+
+body {
+  background: var(--bg);
+  color: var(--ink);
+  font-size: 14px;
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* The compact sizes from the design: small buttons, fields and titles. */
+@layer components {
+  .wrap {
+    max-width: 1240px;
+    margin-inline: auto;
+    padding-inline: clamp(16px, 2vw, 24px);
+  }
+  .h-sect {
+    font-family: var(--font-display);
+    font-size: clamp(25px, 2.4vw, 30px);
+    font-weight: 700;
+    line-height: 1.1;
+  }
+  .price {
+    font-family: var(--font-display);
+    font-weight: 700;
+    line-height: 1.1;
+  }
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    height: 38px;
+    padding-inline: 14px;
+    border: 1px solid transparent;
+    border-radius: 6px;
+    font-size: 13.5px;
+    font-weight: 600;
+    white-space: nowrap;
+    cursor: pointer;
+    transition: background-color 0.15s, border-color 0.15s, color 0.15s;
+  }
+  .btn-sm {
+    height: 30px;
+    padding-inline: 10px;
+    border-radius: 5px;
+    font-size: 12.5px;
+  }
+  .btn-accent {
+    background: var(--accent);
+    color: #fff;
+  }
+  .btn-accent:hover {
+    background: var(--accent-hover);
+  }
+  .btn-wa {
+    background: var(--wa);
+    color: #fff;
+  }
+  .btn-wa:hover {
+    background: var(--wa-hover);
+  }
+  .btn-line {
+    border-color: var(--line-strong);
+    background: var(--surface);
+    color: var(--ink);
+  }
+  .btn-line:hover {
+    border-color: var(--ink);
+  }
+  .btn-dark-line {
+    border-color: var(--dark-line);
+    color: #fff;
+  }
+  .btn-dark-line:hover {
+    border-color: #fff;
+  }
+  .card {
+    overflow: hidden;
+    border: 1px solid var(--line);
+    border-radius: 8px;
+    background: var(--surface);
+  }
+  .field {
+    height: 34px;
+    padding-inline: 6px;
+    border: 1px solid var(--line-strong);
+    border-radius: 5px;
+    background: #fff;
+    font-size: 13px;
+    color: var(--ink);
+  }
+}
+
+:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}
