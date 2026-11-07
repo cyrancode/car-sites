@@ -5,8 +5,9 @@ import { srcSetOf } from "@/lib/images";
 export default function CarCard({ car }) {
   return (
     <article className="card grid grid-cols-[132px_minmax(0,1fr)] sm:flex sm:flex-col">
-      <a href={car.href} className="block">
-        <img src={car.img} srcSet={srcSetOf(car.img)} sizes="(min-width: 640px) 300px, 132px" alt={car.name} loading="lazy" className="block h-full min-h-[112px] w-full object-cover sm:aspect-[4/3] sm:h-auto" />
+      {/* On phones the photo fills the row without setting its height, so tall photos don't stretch the card. */}
+      <a href={car.href} className="relative block min-h-[112px] sm:min-h-0">
+        <img src={car.img} srcSet={srcSetOf(car.img)} sizes="(min-width: 640px) 300px, 132px" alt={car.name} loading="lazy" className="absolute inset-0 block h-full w-full object-cover sm:static sm:aspect-[4/3] sm:h-auto" />
       </a>
       <div className="flex flex-col justify-between gap-1.5 px-2.5 py-2 sm:px-3 sm:pb-3 sm:pt-2.5">
         <div>

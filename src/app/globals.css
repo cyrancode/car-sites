@@ -8,8 +8,9 @@
   --color-line: var(--line);
   --color-line-strong: var(--line-strong);
   --color-muted: var(--muted);
-  --color-accent: var(--accent);
-  --color-accent-hover: var(--accent-hover);
+  /* A light accent (amber) sets a darker colour for text on light backgrounds. */
+  --color-accent: var(--accent-text, var(--accent));
+  --color-accent-hover: var(--accent-text-hover, var(--accent-hover));
   --color-on-dark: var(--on-dark);
   --color-dark: var(--dark);
   --color-dark-muted: var(--dark-muted);
@@ -74,7 +75,7 @@ body {
   }
   .btn-accent {
     background: var(--accent);
-    color: #fff;
+    color: var(--on-accent, #fff);
   }
   .btn-accent:hover {
     background: var(--accent-hover);

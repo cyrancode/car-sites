@@ -7,7 +7,7 @@ import StockGrid from "./StockGrid";
 export default function StockPage({ lang }) {
   const s = t(lang);
   const cars = client.cars.map((c) => carCard(c, lang));
-  const typeOrder = ["suv", "sedan", "mpv", "utility"];
+  const typeOrder = ["suv", "sedan", "hatch", "mpv", "utility"];
   const inStock = new Set(client.cars.map((c) => c.type));
   const types = typeOrder.filter((v) => inStock.has(v)).map((v) => [v, s.types[v]]);
   const brands = [...new Set(client.cars.map((c) => c.brand))].sort();

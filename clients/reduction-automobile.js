@@ -33,6 +33,7 @@ const client = {
     fr: "Satisfaction totale, véhicule avec kilométrage authentique.",
     en: "Totally satisfied, a vehicle with genuine mileage.",
   },
+  note: { fr: "Vous cherchez plutôt une location ? Demandez-nous sur WhatsApp.", en: "Looking to rent instead? Ask us on WhatsApp." },
   hours: { fr: "Tous les jours, 06:30 à 21:00", en: "Every day, 6:30 am to 9 pm" },
   openingHours: "Mo-Su 06:30-21:00",
   address: { street: "Rue 829, carrefour Happy Sport", district: "Makepe", city: "Douala", country: "CM" },

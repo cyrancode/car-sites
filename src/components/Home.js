@@ -48,7 +48,7 @@ export default function Home({ lang }) {
             {rating && (
               <p className="flex flex-wrap items-center gap-x-4 gap-y-1 text-[12.5px] text-dark-muted md:text-[13px]">
                 <span className="inline-flex items-center gap-1"><StarIcon className="text-on-dark" /><strong className="text-white">{s.ratingValue(rating.value)}</strong> {s.ratingLine(rating.value, rating.count, rating.source)}</span>
-                <span className="hidden md:inline">{address.street}</span>
+                <span className="hidden md:inline">{address.street}, {address.district}</span>
               </p>
             )}
           </div>
@@ -98,7 +98,7 @@ export default function Home({ lang }) {
               {client.hours && <><dt className="text-dark-muted">{s.hours}</dt><dd>{tr(client.hours, lang)}</dd></>}
               <dt className="text-dark-muted">{s.phone}</dt><dd><a href={`tel:${contact.phone}`} className="hover:text-on-dark">{prettyPhone(contact.phone)}</a></dd>
             </dl>
-            <p className="text-[13px] text-dark-muted">{s.rentalNote}</p>
+            {client.note && <p className="text-[13px] text-dark-muted">{tr(client.note, lang)}</p>}
             <div className="flex flex-wrap gap-2">
               <a href={hello} target="_blank" rel="noopener" className="btn btn-wa"><WhatsAppIcon size={15} />{s.writeWhatsapp}</a>
               <a href={mapUrl()} target="_blank" rel="noopener" className="btn btn-dark-line">{s.directions}</a>
